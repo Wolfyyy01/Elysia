@@ -1,0 +1,22 @@
+{
+  "name": "elysia",
+  "module": "src/index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "commandkit start",
+    "build": "commandkit build",
+    "dev": "bun --watch ."
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commandkit": "^0.1.10",
+    "discord.js": "^14.21.0"
+  }
+}
