@@ -20,3 +20,5 @@ new CommandKit({
 
 
 client.login(process.env.TOKEN)
+import "./database/drizzleClient.ts"
+import "./database/redis.ts"

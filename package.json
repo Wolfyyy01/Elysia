@@ -6,7 +6,8 @@
   "scripts": {
     "start": "commandkit start",
     "build": "commandkit build",
-    "dev": "bun --watch ."
+    "dev": "bun --watch .",
+    "migrate": "drizzle-kit push"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -17,6 +18,10 @@
   "dependencies": {
     "chalk": "^5.4.1",
     "commandkit": "^0.1.10",
-    "discord.js": "^14.21.0"
+    "discord.js": "^14.21.0",
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.2",
+    "ioredis": "^5.6.1",
+    "postgres": "^3.4.7"
   }
 }
