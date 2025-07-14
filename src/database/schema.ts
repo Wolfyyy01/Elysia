@@ -19,6 +19,7 @@ export const resources = pgTable("resources", {
 
 export const buildings = pgTable("buildings", {
   id: serial("id").primaryKey(),
+  building_id: text("building_id"),
   user_id: integer("user_id").references(() => user.id),
   name: text("name"),
   type: text("type"),
