@@ -1,16 +1,14 @@
 import { type SlashCommandProps, type CommandOptions, ButtonKit } from "commandkit";
 import {
   ActionRowBuilder,
-  AttachmentBuilder,
   ButtonInteraction,
-  ButtonStyle,
   EmbedBuilder,
-  ModalBuilder,
   SlashCommandBuilder,
 } from "discord.js";
 import config from "../../utils/config";
 import { StartButton } from "../../assets/buttons";
 import { StartModal } from "../../assets/modals";
+import { boxImage } from "../../assets/images/attachments";
 
 export const data = new SlashCommandBuilder()
   .setName("start")
@@ -19,9 +17,7 @@ export const data = new SlashCommandBuilder()
   );
 
 export async function run({ interaction, client, handler }: SlashCommandProps) {
-  const boxImage = new AttachmentBuilder("./src/assets/images/startedBox.png", {
-    name: "startedBox.png",
-  });
+  
   const beginEmbed = new EmbedBuilder()
     .setTitle("Begin your adventure!")
     .setDescription(
@@ -32,12 +28,8 @@ export async function run({ interaction, client, handler }: SlashCommandProps) {
     .setTimestamp()
     .setThumbnail(`attachment://${boxImage.name}`);
 
-    const StartButton1 = new ButtonKit()
-    .setCustomId("start1")
-    .setLabel("Start")
-    .setStyle(ButtonStyle.Primary);
 
-  const row = new ActionRowBuilder<ButtonKit>().addComponents(StartButton1);
+  const row = new ActionRowBuilder<ButtonKit>().addComponents(StartButton);
 
   const message = await interaction.reply({
     embeds: [beginEmbed],
@@ -47,8 +39,7 @@ export async function run({ interaction, client, handler }: SlashCommandProps) {
     fetchReply: true,
   });
 
-  StartButton1.onClick((buttonInteraction: ButtonInteraction) => {
-    console.log('test')
+  StartButton.onClick((buttonInteraction: ButtonInteraction) => {
     buttonInteraction.showModal(
       StartModal
     )

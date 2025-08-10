@@ -75,10 +75,19 @@ bun start
 
 ```
 ├── src/
+│   ├── assets/         # Assets like buttons and inputs
 │   ├── commands/       # Bot commands
+│   │   ├── general/    # General commands including build
 │   ├── database/       # Database connections and models
+│   │   ├── schema.ts   # Database schema definitions
 │   ├── events/         # Discord.js event handlers
+│   ├── types/          # TypeScript type definitions
 │   ├── utils/          # Utility functions
+│   │   ├── buildings.ts # Building definitions
+│   │   ├── functions/  # Utility functions
+│   │   │   ├── build.ts # Building and upgrade functions
+│   │   │   ├── resources.ts # Resource management functions
+│   │   │   └── getUserData.ts # User data retrieval
 │   ├── validations/    # Command validation
 │   └── index.ts        # Entry point
 ├── .env                # Environment variables

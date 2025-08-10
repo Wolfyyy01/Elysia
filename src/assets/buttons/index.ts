@@ -11,4 +11,10 @@ const ClaimButton = new ButtonKit()
    .setLabel("Claim")
    .setStyle(ButtonStyle.Success);
 
-export { StartButton, ClaimButton}
+const ConfirmButton = new ButtonKit()
+    .setCustomId("confirm")
+    .setLabel("Confirm")
+    .setStyle(ButtonStyle.Success);
+
+
+export { StartButton, ClaimButton, ConfirmButton}

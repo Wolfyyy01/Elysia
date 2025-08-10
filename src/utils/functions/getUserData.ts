@@ -31,7 +31,7 @@ export const createUser = async (discordId: string, username: string) => {
       .values({
         discord_id: discordId,
         username: username,
-        current_era: eras[0]?.name || "Prehistoric",
+        current_era: eras[0]?.id.toString() || "1",
         joined_at: new Date(),
       })
       .returning();

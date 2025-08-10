@@ -7,6 +7,8 @@ import { ClaimButton } from "../../assets/buttons";
 import { generateLootbox } from "../../utils/functions/lottbox";
 import { saveResources } from "../../utils/functions/resources";
 import type { ResourceInput } from "../../types";
+import { emojis } from "../../utils/emojis";
+import { boxImage } from "../../assets/images/attachments";
 
 export default async function (
   interaction: ModalSubmitInteraction,
@@ -36,7 +38,7 @@ export default async function (
     const successEmbed = new EmbedBuilder()
       .setTitle("Profile Created!")
       .setDescription(
-        `Welcome to the world of Elysia, **${username}**!\nYour journey begins in the **${userData.current_era}** era.\n\n🎁 Claim your first reward by pressing the button below.`
+        `Welcome to the world of Elysia, **${username}**!\nYour journey begins in the **${userData.current_era}** era.\n\n${emojis.lootbox} Claim your first reward by pressing the button below.`
       )
       .setColor(config.colors.success)
       .setFooter({ text: "Made with 💜 by _wolfy01" })
@@ -55,11 +57,15 @@ export default async function (
       async (buttonInteraction) => {
         const box = await generateLootbox("starter");
         const boxEmbed = new EmbedBuilder()
-          .setTitle("Lootbox")
+          .setTitle("**Lootbox Unlocked!**")
           .setDescription(
-            `You pried open a mysterious **Starter LootBox** and discovered:`
+            `${emojis.lootbox} **You pried open the dusty lootbox and found...**`
           )
-          .setColor(config.colors.primary);
+          .setColor(config.colors.primary)
+          .setThumbnail(`attachment://${boxImage.name}`)
+          .setFooter({
+            text: "_May these humble resources help you survive the wilds of Prehistory._",
+          });
 
         saveResources(
           userData.id,
@@ -73,7 +79,11 @@ export default async function (
           });
         });
 
-        buttonInteraction.reply({ embeds: [boxEmbed], flags: ["Ephemeral"] });
+        buttonInteraction.reply({
+          embeds: [boxEmbed],
+          files: [boxImage],
+          flags: ["Ephemeral"],
+        });
       },
       { message }
     );

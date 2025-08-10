@@ -1,10 +1,11 @@
 import type { EraResource } from "../types";
+import { emojis } from "./emojis";
 
 export const resources: EraResource[] = [
   // Preistorică
-  { id: "stone", name: "Stone", era: 1 },
-  { id: "wood", name: "Wood", era: 1 },
-  { id: "berries", name: "Berries", era: 1 },
+  { id: "stone", name: `${emojis.stone} Stone`, era: 1 },
+  { id: "wood", name: `${emojis.wood} Wood`, era: 1 },
+  { id: "berries", name: `${emojis.berry} Berries`, era: 1 },
 
   // Epoca Bronzului
   { id: "copper", name: "Copper", era: 2 },

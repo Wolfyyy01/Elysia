@@ -1,4 +1,4 @@
-import { bigint, integer, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core"
+import { bigint, integer, pgTable, serial, text, timestamp, varchar } from "drizzle-orm/pg-core"
 import { eras } from "../utils/eras"
 import type { InferModel } from "drizzle-orm"
 
@@ -15,6 +15,8 @@ export const resources = pgTable("resources", {
   user_id: integer("user_id").references(() => user.id),
   name: text("name"),
   amount: bigint("amount", { mode: "number" }).default(0),
+  resource_id: varchar("resource_id"),
+
 })
 
 export const buildings = pgTable("buildings", {

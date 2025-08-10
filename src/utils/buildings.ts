@@ -1,4 +1,5 @@
 import type { Building } from "../types";
+import { emojis } from "./emojis";
 
 export const buildings: Building[] = [
   // === Epoca Preistorică ===
@@ -7,8 +8,8 @@ export const buildings: Building[] = [
     name: "Stone Pit",
     era: 1,
     type: "generator",
-    produces: ["stone"],
-    productionRate: 1.0, // 1 stone per second
+    produces: [`${emojis.stone}`],
+    productionRate: 1.0, // 1 stone per minute
     maxLevel: 3,
     constructionCost: { wood: 10 },
     upgradesTo: "copper_mine",
@@ -19,7 +20,7 @@ export const buildings: Building[] = [
     era: 1,
     type: "generator",
     produces: ["wood"],
-    productionRate: 1.2, // 1.2 wood per second
+    productionRate: 1.2, // 1.2 wood per minute
     maxLevel: 3,
     constructionCost: { stone: 5 },
   },
@@ -29,7 +30,7 @@ export const buildings: Building[] = [
     era: 1,
     type: "generator",
     produces: ["berries"],
-    productionRate: 0.8, // 0.8 berries per second
+    productionRate: 0.8, // 0.8 berries per minute
     maxLevel: 2,
     constructionCost: { wood: 8 },
     upgradesTo: "granary",
@@ -39,7 +40,7 @@ export const buildings: Building[] = [
     name: "Fire Hut",
     era: 1,
     type: "booster",
-    boosts: ["berries", "wood"],
+    boosts: [emojis.berry, emojis.wood],
     boostPercentage: 15, // 15% boost
     maxLevel: 1,
     constructionCost: { wood: 10, stone: 5 },
@@ -62,7 +63,7 @@ export const buildings: Building[] = [
     era: 2,
     type: "generator",
     produces: ["copper"],
-    productionRate: 0.9, // 0.9 copper per second
+    productionRate: 0.9, // 0.9 copper per minute
     maxLevel: 4,
     constructionCost: { stone: 15, wood: 10 },
     upgradesTo: "iron_mine",
@@ -73,7 +74,7 @@ export const buildings: Building[] = [
     era: 2,
     type: "generator",
     produces: ["tin"],
-    productionRate: 0.7, // 0.7 tin per second
+    productionRate: 0.7, // 0.7 tin per minute
     maxLevel: 4,
     constructionCost: { stone: 15, wood: 10 },
   },
@@ -83,7 +84,7 @@ export const buildings: Building[] = [
     era: 2,
     type: "generator",
     produces: ["bronze"],
-    productionRate: 0.5, // 0.5 bronze per second
+    productionRate: 0.5, // 0.5 bronze per minute
     maxLevel: 3,
     constructionCost: { copper: 10, tin: 10, stone: 15 },
   },
@@ -93,7 +94,7 @@ export const buildings: Building[] = [
     era: 2,
     type: "generator",
     produces: ["grain"],
-    productionRate: 1.0, // 1.0 grain per second
+    productionRate: 1.0, // 1.0 grain per minute
     maxLevel: 3,
     constructionCost: { wood: 20 },
     upgradesTo: "bakery",
@@ -104,7 +105,7 @@ export const buildings: Building[] = [
     era: 2,
     type: "generator",
     produces: ["cloth"],
-    productionRate: 0.6, // 0.6 cloth per second
+    productionRate: 0.6, // 0.6 cloth per minute
     maxLevel: 2,
     constructionCost: { grain: 10, wood: 10 },
   },
@@ -136,7 +137,7 @@ export const buildings: Building[] = [
     era: 3,
     type: "generator",
     produces: ["iron"],
-    productionRate: 0.8, // 0.8 iron per second
+    productionRate: 0.8, // 0.8 iron per minute
     maxLevel: 5,
     constructionCost: { copper: 20, bronze: 10 },
   },
@@ -146,7 +147,7 @@ export const buildings: Building[] = [
     era: 3,
     type: "generator",
     produces: ["coal"],
-    productionRate: 0.7, // 0.7 coal per second
+    productionRate: 0.7, // 0.7 coal per minute
     maxLevel: 4,
     constructionCost: { wood: 25, stone: 20 },
   },
@@ -156,7 +157,7 @@ export const buildings: Building[] = [
     era: 3,
     type: "generator",
     produces: ["bread"],
-    productionRate: 0.9, // 0.9 bread per second
+    productionRate: 0.9, // 0.9 bread per minute
     maxLevel: 3,
     constructionCost: { grain: 15, wood: 15 },
   },
@@ -166,7 +167,7 @@ export const buildings: Building[] = [
     era: 3,
     type: "generator",
     produces: ["tools"],
-    productionRate: 0.5, // 0.5 tools per second
+    productionRate: 0.5, // 0.5 tools per minute
     maxLevel: 3,
     constructionCost: { iron: 10, coal: 5 },
   },
